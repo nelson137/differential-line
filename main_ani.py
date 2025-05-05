@@ -80,8 +80,8 @@ def main():
   angles = sorted(random(INIT_NUM)*TWOPI)
   DF.init_circle_segment(MID,MID,INIT_RAD, angles)
 
-  from fn import Fn
-  fn = Fn(prefix='./res/')
+  #from fn import Fn
+  #fn = Fn(prefix='./res/')
 
   exporter = get_exporter(
     NMAX,
@@ -108,10 +108,10 @@ def main():
     if not i % 100:
       show(render,np_edges[:num,:], None, r=1.3*ONE)
       # render.write_to_png(fn.name())
-      exporter(
-        DF,
-        fn.name()+'.2obj'
-      )
+      #exporter(
+      #  DF,
+      #  fn.name()+'.2obj'
+      #)
 
     ## render solid
     # num = DF.get_sorted_vert_coordinates(np_verts)
