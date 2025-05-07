@@ -66,7 +66,7 @@ def main():
   from iutils.render import Animate
   from differentialLine import DifferentialLine
 
-  from fn import Fn
+  #from fn import Fn
 
   from modules.show import sandstroke
   from modules.show import dots
@@ -102,7 +102,7 @@ def main():
   angles = sorted(random(INIT_NUM)*TWOPI)
   DF.init_circle_segment(MID,MID,FARL*0.2, angles)
 
-  fn = Fn(prefix='./res/', postfix='.png')
+  #fn = Fn(prefix='./res/', postfix='.png')
 
 
   def wrap(render):
@@ -113,12 +113,12 @@ def main():
 
     ## if fn is a path each image will be saved to that path
 
-    if not render.steps%3:
-      f = fn.name()
-    else:
-      f = None
+    #if not render.steps%3:
+    #  f = fn.name()
+    #else:
+    #  f = None
 
-    grains += (-1)**floor(2*random())
+    grains += (-1)**int(floor(2*random()))
     print(grains)
     if grains<0:
       grains = 0
@@ -127,7 +127,7 @@ def main():
     render.set_front(FRONT)
 
     coord_num = DF.np_get_edges_coordinates(np_coords)
-    sandstroke(render,np_coords[:coord_num,:],grains,f)
+    sandstroke(render,np_coords[:coord_num,:],grains) # f
 
     if not random()<0.1:
       vert_num = DF.np_get_vert_coordinates(np_vert_coords)

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-
 from numpy import pi
 from numpy.random import random
 from modules.growth import spawn_curl
@@ -106,7 +105,7 @@ def main():
     ## render outline
     num = DF.np_get_edges_coordinates(np_edges)
     if not i % 100:
-      show(render,np_edges[:num,:], None, r=1.3*ONE)
+      show(render, np_edges[:num,:], None, r=1.3*ONE)
       # render.write_to_png(fn.name())
       #exporter(
       #  DF,
